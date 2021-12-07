@@ -22,7 +22,7 @@ The goal of this project is to send automated greeting messages, e.g., a postcar
 
 Each component runs inside a separate Docker Container. 
 
-- **Message Dispatcher: ** Runs regularly, checks if new messages have been added to the dispatch queue (stored in the DB). If a greeting should be dispatched today / now, it will send it using the specified dispatcher.
+- **Message Dispatcher:** Runs regularly, checks if new messages have been added to the dispatch queue (stored in the DB). If a greeting should be dispatched today / now, it will send it using the specified dispatcher.
 
   - Special for the [Postcard Creator Wrapper](https://github.com/abertschi/postcard_creator_wrapper). If multiple cards should be send at the same date, it will postpone cards according to a priority level. The priority of the postponed cards is increased and scheduled for the next day. Cards must be deferred to another day because the free tier only allows for one card to be sent on any given day.
 
@@ -32,7 +32,7 @@ Each component runs inside a separate Docker Container.
 
   - Images are stored on disk or in a cloud service like the [Google Cloud Bucket](https://cloud.google.com/storage/docs/creating-buckets). You can specify the image save location as argument for the message dispatcher. 
 
-- **Message Source: ** Runs regularly or on request: Adds new messages to the dispatch queue using one or multiple data sources (e.g. CeviDB, CSV file). 
+- **Message Source:** Runs regularly or on request: Adds new messages to the dispatch queue using one or multiple data sources (e.g. CeviDB, CSV file). 
 
   - CeviDB: Runs regularly and checks if anyone in the selected group has it's birthday in the upcoming days. Needs an access token: [Personal OAuth access token](https://github.com/hitobito/hitobito/blob/master/doc/development/05_rest_api.md).
 
